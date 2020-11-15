@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import './category-screen.dart';
-import './meal_category_screen.dart';
+import 'package:meals_app/screens/meal_screen.dart';
+import 'screens/category-screen.dart';
+import 'screens/meal_category_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,9 +27,11 @@ class _MyAppState extends State<MyApp> {
                 fontSize: 20,
                 fontFamily: 'RobotoCondensed',
               ))),
-      home: CategoryScreen(),
+      initialRoute: '/',
       routes: {
-        '/meal-category': (ctx) => MealCategotyScreen(),
+        '/': (ctx) => CategoryScreen(),
+        MealCategotyScreen.routeName: (ctx) => MealCategotyScreen(),
+        MealScreen.routeName: (ctx) => MealScreen()
       },
     );
   }
